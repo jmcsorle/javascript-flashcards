@@ -11,13 +11,13 @@ function createRound(deck) {
 }
 
 function takeTurn(guess, round) {
-  round.turns += 1;
-  round.currentCard = round.deck[round.turns];
   const feedback = evaluateGuess(guess, round.currentCard.correctAnswer);
   if (feedback === 'incorrect!') {
     round.incorrectGuesses.push(round.currentCard.id);
   }
-  return round;
+  round.turns += 1;
+  round.currentCard = round.deck[round.turns];
+  return feedback;
 }
 
 function calculatePercentCorrect(round) {
