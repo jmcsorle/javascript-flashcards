@@ -39,7 +39,6 @@ describe('deck', function () {
   });
 
   it('should return a count of elements in an array', function () {
-    console.log(deck);
     const count = countCards(deck);
     expect(count).to.equal(deck.length);
   });
